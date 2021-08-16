@@ -10,16 +10,16 @@ script:
   - docker run -e CI=true leeondocks/docker-react npm run test
 
 after_sucess:
-  - docker build -t leeondocks/multi-client ./client
-  - docker build -t leeondocks/multi-worker ./worker
-  - docker build -t leeondocks/multi-server ./server
-  - docker build -t leeondocks/multi-nginx  ./nginx
+  - docker build -t leeondocks96/multi-client ./client
+  - docker build -t leeondocks96/multi-worker ./worker
+  - docker build -t leeondocks96/multi-server ./server
+  - docker build -t leeondocks96/multi-nginx  ./nginx
 #Login to docker CLI
   - echo "$PASSWORD" | docker login -u "$USERNAME" --password-stdin
 #Take built images and push to docker hub
-  - docker push leeondocks/multi-client
-  - docker push leeondocks/multi-worker
-  - docker push leeondocks/multi-server
-  - docker push leeondocks/multi-nginx
+  - docker push leeondocks96/multi-client
+  - docker push leeondocks96/multi-worker
+  - docker push leeondocks96/multi-server
+  - docker push leeondocks96/multi-nginx
 
   
